@@ -1,6 +1,7 @@
 import * as THREE from './vendor/three/three.module.js';
 
 const asset=name=>new URL('./minecraft/'+name,import.meta.url).href;
+export const minecraftAsset=asset;
 const active=new Map();
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function previewMarkup(kind='press',elements=null,view='iso'){return `<div class="voxel-preview" data-voxel="${esc(kind)}" data-view="${esc(view)}" ${elements?`data-elements="${esc(JSON.stringify(elements))}"`:''}><canvas tabindex="0" role="img" aria-label="${esc(kind)} textured 3D model. Drag or use arrow keys to rotate. Scroll to zoom."></canvas><span class="voxel-hint">Drag to rotate · Scroll to zoom</span></div>`;}
@@ -30,7 +31,7 @@ function makePreview(root){
   if(uv){const attr=geometry.attributes.uv;boxUV(...size,...uv).forEach(([x,y,w,h],face)=>{const coords=[[x,y],[x+w,y],[x,y+h],[x+w,y+h]];coords.forEach(([a,b],i)=>attr.setXY(face*4+i,a/atlas[0],1-b/atlas[1]));});attr.needsUpdate=true;}
   const mesh=new THREE.Mesh(geometry,maps);mesh.position.set(...at);group.add(mesh);return mesh;
  }
- const kind=root.dataset.voxel,isMob=['creeper','zombie'].includes(kind);let height=isMob?32:16;
+ const kind=root.dataset.voxel,isMob=['creeper','zombie'].includes(kind);let height=kind==='creeper'?26:kind==='zombie'?32:16;
  if(isMob){const skin=material(texture(kind+'.png'));for(const p of entityParts(kind)){const mesh=box(p.size,p.at,skin,p.uv,kind==='zombie'?[64,64]:[64,32]);if(kind==='zombie'&&p.name.includes('arm')){mesh.rotation.x=-Math.PI/2;mesh.position.set(p.at[0],23,6);}}}
  else if(root.dataset.elements){const elements=JSON.parse(root.dataset.elements);for(const e of elements){const name=e.name==='base'?'stone':/column|housing|head|cap/.test(e.name)?'iron_block':'copper_block';box(e.to.map((n,i)=>n-e.from[i]),e.to.map((n,i)=>(n+e.from[i])/2-([8,0,8][i])),material(texture(name+'.png')));}}
  else {const map=kind==='copper'?'copper_block':kind==='steel'?'iron_block':kind;
@@ -40,7 +41,7 @@ function makePreview(root){
  const ground=new THREE.GridHelper(isMob?40:24,isMob?10:6,0x526052,0x3c463e);ground.position.y=-.1;scene.add(ground);geometries.push(ground.geometry);materials.push(ground.material);
  const target=new THREE.Vector3(0,height/2,0);
  function position(){const radius=70;camera.position.set(Math.sin(yaw)*Math.cos(pitch)*radius,target.y+Math.sin(pitch)*radius,Math.cos(yaw)*Math.cos(pitch)*radius);camera.lookAt(target);render();}
- function resize(){const {width,height:h}=root.getBoundingClientRect();if(!width||!h)return;renderer.setSize(width,h,false);const half=(height*.8+5)/zoom;camera.left=-half*width/h;camera.right=half*width/h;camera.top=half;camera.bottom=-half;camera.near=.1;camera.far=200;camera.updateProjectionMatrix();position();}
+ function resize(){const {width,height:h}=root.getBoundingClientRect();if(!width||!h)return;renderer.setSize(width,h,false);const half=(isMob?height*.6+3:height*.8+5)/zoom;camera.left=-half*width/h;camera.right=half*width/h;camera.top=half;camera.bottom=-half;camera.near=.1;camera.far=200;camera.updateProjectionMatrix();position();}
  const observer=new ResizeObserver(resize);observer.observe(root);
  canvas.addEventListener('pointerdown',e=>{drag=[e.clientX,e.clientY];canvas.setPointerCapture(e.pointerId);});
  canvas.addEventListener('pointermove',e=>{if(!drag)return;yaw-=(e.clientX-drag[0])*.012;pitch=THREE.MathUtils.clamp(pitch+(e.clientY-drag[1])*.01,-1.1,1.3);drag=[e.clientX,e.clientY];position();});
