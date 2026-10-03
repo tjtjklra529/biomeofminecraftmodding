@@ -11,7 +11,4 @@ tests/.*
 preview*.png
 IMPLEMENTATION-*.md
 VERIFICATION.md
-public/minecraft/*.png
-public/minecraft/reference-data.mjs
-public/minecraft/provenance.json
 public/vendor/blockbench/dist/

@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: '24'
       - run: npm run build
-      - run: node --test tests/pages.test.mjs tests/integrations.test.mjs tests/blockbench-companion.test.mjs tests/tutor-keyboard.test.mjs tests/studio.test.mjs tests/markdown.test.mjs tests/minecraft-ui.test.mjs
+      - run: node --test tests/pages.test.mjs tests/integrations.test.mjs tests/blockbench-companion.test.mjs tests/tutor-keyboard.test.mjs tests/studio.test.mjs tests/markdown.test.mjs tests/minecraft-ui.test.mjs tests/voxel-preview.test.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

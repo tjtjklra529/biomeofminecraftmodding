@@ -1,0 +1,200 @@
+{
+  "version": "26.3",
+  "source": "Minecraft Java Edition 26.3 client resources",
+  "owner": "Mojang/Microsoft. Vanilla reference assets are not covered by the Biome MIT license.",
+  "purpose": "Selected unchanged textures for educational Minecraft asset previews",
+  "assets": {
+    "copper_block.png": {
+      "path": "textures/block/copper_block.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "1b0aaab59d19b4f909a9ac1208b02363bd2796637b10641a8b7cb0ed587c2aa7"
+    },
+    "iron_block.png": {
+      "path": "textures/block/iron_block.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "dafa9944ba49fe71958553eded50e87d7bea9c7410cfe568745989bede101c49"
+    },
+    "stone.png": {
+      "path": "textures/block/stone.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "b5e10adc72442bfb257ce7ba0b9bbe36475a0c8cdfec89b80dc9517203ff3e9f"
+    },
+    "oak_planks.png": {
+      "path": "textures/block/oak_planks.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "65665943ef9c8bcf63fc67d2083ed0c50243f724106d0e4bb1abea5d921b16d3"
+    },
+    "dirt.png": {
+      "path": "textures/block/dirt.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "67197d5371efc3ca1638217c38349665dbd5a977b47bfb20075c858dff87d510"
+    },
+    "grass_block_top.png": {
+      "path": "textures/block/grass_block_top.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "52f44b64ce884a13dfe35e4b4da2e35898b790dd4d7a5ea536f1b0c0d56d29b4"
+    },
+    "grass_block_side.png": {
+      "path": "textures/block/grass_block_side.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "76a677640eb91d6a9aed844bc66e329b1894f89e241a0071333b6678c0854580"
+    },
+    "furnace_front.png": {
+      "path": "textures/block/furnace_front.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "aae808f71f1bddf4a25592f7dd3d7f6e9b3adaa739502170766424f4eb6bf9c5"
+    },
+    "furnace_side.png": {
+      "path": "textures/block/furnace_side.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "cada9065da8d26b3a7324a203edb42f2564975519e8504d520e10d530822bb5b"
+    },
+    "furnace_top.png": {
+      "path": "textures/block/furnace_top.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "59e26149cde8b86ea1d165c1a4ba5c44531a4b7be134b30c93120bba1cefb162"
+    },
+    "oak_log.png": {
+      "path": "textures/block/oak_log.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "61735859c9c9ea82601191a77c6f256d93619cbaf7cad998a3ed5762877a34e6"
+    },
+    "oak_log_top.png": {
+      "path": "textures/block/oak_log_top.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "a520800a833ea0c6214481245ab40397aa0c08b4ffc909046dac266386f9fc01"
+    },
+    "diamond_ore.png": {
+      "path": "textures/block/diamond_ore.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "2ef421308b678d2225aef41affc087ae512a81213a24a98cf456dbe231884122"
+    },
+    "copper_ingot.png": {
+      "path": "textures/item/copper_ingot.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "209e43de9b82ba4d5320c2c7c71fbc91fafee7efbc80c75aca48dbcf0c963227"
+    },
+    "iron_ingot.png": {
+      "path": "textures/item/iron_ingot.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "ca67b14f685bfe1972addf6b44692dab601fe8d27464a30aa8e65f16f716cab2"
+    },
+    "coal.png": {
+      "path": "textures/item/coal.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "31a5bf332d28c65e0e83368d4008b31c471023ae391e4533f80cd80ad13f54e0"
+    },
+    "redstone.png": {
+      "path": "textures/item/redstone.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "6d0e6a1fd54142cd3de649e1100c428733512b322a0b0a530f62eae9f86881ec"
+    },
+    "diamond.png": {
+      "path": "textures/item/diamond.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "fd11635ec666c3febb9e6dd6d3ec49cdfb4d16a2a1d595ebd10e56b302417d08"
+    },
+    "apple.png": {
+      "path": "textures/item/apple.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "e6a57182db6029fff6d02fc774780fcec9f506b74226985445c91e5e7df5d9bb"
+    },
+    "iron_sword.png": {
+      "path": "textures/item/iron_sword.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "455f2c306a9ddc1da19b04603ae0047211e2f4e4817b105573fcdc29b3c6945f"
+    },
+    "stick.png": {
+      "path": "textures/item/stick.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "da5ede0e54715247de78567df5212a114d0b8a1af183e286fa69cc6af5993711"
+    },
+    "creeper_spawn_egg.png": {
+      "path": "textures/item/creeper_spawn_egg.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "2283799812c0b0931e5a566a09f805d4a041eb06fb3ed8d0580dd236e140c5a9"
+    },
+    "creeper.png": {
+      "path": "textures/entity/creeper/creeper.png",
+      "width": 64,
+      "height": 32,
+      "sha256": "e5f1cbe223f6838049e4632b250cad7b70c1d30e9717ad7bfe32912731887283"
+    },
+    "zombie.png": {
+      "path": "textures/entity/zombie/zombie.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "1b88eea9b63889c2c3399773f887af375defc3aad0e7a375adc84249da54cbbd"
+    },
+    "ascii.png": {
+      "path": "textures/font/ascii.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "e8646f1ed1f4bfd597d262cca3d8fac88ceaaa62807bbd5e607b2e3fe41c928a"
+    },
+    "button.png": {
+      "path": "textures/gui/sprites/widget/button.png",
+      "width": 200,
+      "height": 20,
+      "sha256": "0a2e159360200a39e0c7e9c0db0e6aa034ba4e1f8d99698c004084b5ba6e94cb"
+    },
+    "button_highlighted.png": {
+      "path": "textures/gui/sprites/widget/button_highlighted.png",
+      "width": 200,
+      "height": 20,
+      "sha256": "1fcd15ad8971b1e846f848b2211d631f51b9b6533d99ca392a5799af7e9854f9"
+    },
+    "furnace.png": {
+      "path": "textures/gui/container/furnace.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "d700c1af4175a204e9e403c31dea2afdee575dac2bb23493f208b9f0bf3b2dc8"
+    },
+    "burn_progress.png": {
+      "path": "textures/gui/sprites/container/furnace/burn_progress.png",
+      "width": 24,
+      "height": 16,
+      "sha256": "e26aac6002403fdd838b6a0c829808a991d32ba2c4d3603f2c4e2f7ee5a4d969"
+    },
+    "lit_progress.png": {
+      "path": "textures/gui/sprites/container/furnace/lit_progress.png",
+      "width": 14,
+      "height": 14,
+      "sha256": "36a83a892fe65c55296ac01f63374425ecd42aaba3670b61767c88795a5732e3"
+    },
+    "inventory.png": {
+      "path": "textures/gui/container/inventory.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "c2f850076ad7ebd7a1b27d017fe5f66ac388f54de374de988cb79f86b1d59a65"
+    },
+    "crafting_table.png": {
+      "path": "textures/gui/container/crafting_table.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "baf65a599d8bb380b1b03efa1862c20fd29e936b43110d7438b9fe00086075b0"
+    }
+  }
+}
