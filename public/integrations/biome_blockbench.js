@@ -3,10 +3,10 @@
  const query=new URLSearchParams(location.search),workspace=query.get('biome_workspace')||'free-model';
  const parentOrigin=query.get('biome_origin')||location.origin;
  if(!/^http:\/\/(127\.0\.0\.1|localhost):\d+$/.test(parentOrigin)&&!['https://tjtjklra529.github.io','https://biomeofminecraftmodding.esmp.app'].includes(parentOrigin))return;
- let actions=[],timer,listener;
+ let actions=[],timer,listener,loading=false;
  function send(type,payload={}){if(window.parent!==window)window.parent.postMessage({source:'biome-blockbench',type,workspace,...payload},parentOrigin);}
- function snapshot(){if(!window.Project)return;const elements=Cube.all.map(c=>({name:c.name,from:[...c.from],to:[...c.to],rotation:[...c.rotation]}));send('snapshot',{elements,projectName:Project.name,bbmodel:Codecs.project.compile({raw:true})});}
- function loadProject(model){if(!model)return;(model.meta?Codecs.project:Codecs.java_block).load(model,{name:'copper_press.json',path:'copper_press.json'});if(!model.meta){const tex=new Texture({name:'copper_press.png'}).fromPath(location.origin+'/minecraft/copper_block.png').add();Cube.all.forEach(c=>c.applyTexture(tex,true));}Blockbench.showQuickMessage('Biome lesson model loaded');snapshot();}
+ function snapshot(){if(!window.Project||loading)return;const elements=Cube.all.map(c=>({name:c.name,from:[...c.from],to:[...c.to],rotation:[...c.rotation]}));send('snapshot',{elements,projectName:Project.name,bbmodel:Codecs.project.compile({raw:true})});}
+ function loadProject(model){if(!model)return;loading=true;try{const source=model.meta?model:{...model,textures:{}};(model.meta?Codecs.project:Codecs.java_block).load(source,{name:'copper_press.json',path:'copper_press.json'});if(!model.meta){const tex=new Texture({name:'copper_press.png'}).fromPath(location.origin+'/minecraft/copper_block.png').add();Cube.all.forEach(c=>c.applyTexture(tex,true));}}finally{loading=false;}Blockbench.showQuickMessage('Biome lesson model loaded');snapshot();}
  function register(){
   if(!window.Blockbench?.setup_successful||!window.Plugin||!window.Codecs){timer=setTimeout(register,250);return;}
   if(location.pathname.startsWith('/vendor/blockbench/')){Plugins.registered.biome_academy=new Plugin('biome_academy');}
